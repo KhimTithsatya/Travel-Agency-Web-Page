@@ -1,0 +1,593 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Web page</title>
+
+</head>
+<style>
+    body, html {
+    margin: 0;
+    padding: 0;
+    font-family:'Courier New', Courier, monospace;
+    scroll-behavior: smooth
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+
+.header-content {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.logo {
+    font-weight: bold;
+    font-size: 24px;
+    color: #333;
+}
+
+nav ul {
+    list-style-type: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+nav ul li {
+    margin-right: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #333;
+    font-size: 14px;
+}
+
+.social-icons {
+    display: flex;
+}
+
+.social-icons a {
+    margin-left: 15px;
+    color: #333;
+    text-decoration: none;
+}
+
+.social-icons a:after {
+    content: "";
+}
+
+.hamburger {
+    display: none;
+    font-size: 24px;
+    cursor: pointer;
+}
+
+.hero-section {
+    max-width: 600px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.hero-image {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+}
+
+h1 {
+    font-size: 24px;
+    margin-bottom: 15px;
+    font-weight: normal;
+}
+
+p {
+    font-size: 16px;
+    color: #666;
+    margin-bottom: 20px;
+}
+
+.section-title {
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    margin: 40px 0 20px;
+}
+.gallery-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+.gallery-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 10px;
+}
+.gallery-image {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+}
+
+.features-section {
+    max-width: 1200px;
+    margin: 0 auto;
+}
+h2 {
+    text-align: center;
+    font-weight: normal;
+    font-size: 24px;
+    margin-bottom: 30px;
+}
+.features-grid {
+    display: grid;
+    text-align: center;
+}
+.feature {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 20px;
+    border-bottom: 1px solid #e0e0e0;
+}
+.feature-icon {
+    width: 30px;
+    height: 30px;
+    margin-bottom: 10px;
+}
+.feature-title {
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+.feature-description {
+    font-size: 14px;
+    color: #666;
+}
+.contact-section {
+    padding: 50px 0;
+    background-color: #fff;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-size: 32px;
+    margin-bottom: 30px;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-section label {
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+.contact-section input,
+.contact-section select,
+.contact-section textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+.contact-section input[type="checkbox"],
+.contact-section input[type="radio"] {
+    width: auto;
+    margin-right: 10px;
+}
+
+.contact-section button {
+    width: 100%;
+    background-color: #333;
+    color: #fff;
+    padding: 15px;
+    border: none;
+    border-radius: 5px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.contact-section button:hover {
+    background-color: #555;
+}
+
+
+.social-icons-section {
+    display: flex;
+    justify-content: center;
+    text-align: center;
+   
+}
+
+footer {
+    color: #fff;
+    text-align: center;
+    font-size: 14px;
+}
+
+.start-button {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #f0f0f0;
+    color: #333;
+    text-decoration: none;
+    border: 1px solid #ccc;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.start-button:hover {
+    background-color: aqua;
+}
+
+@media (min-width: 851px) {
+    .hero-section {
+        max-width: 1200px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row-reverse;
+    }
+
+    .hero-content {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .hero-image {
+        flex: 1;
+        max-width: 50%;
+        margin-bottom: 0;
+    }
+
+    .hero-section:nth-child(3) .hero-content {
+        padding-right: 0;
+        padding-left: 20px;
+    }
+
+    h1 {
+        font-size: 32px;
+    }
+
+    p {
+        font-size: 18px;
+    }
+
+    .start-button {
+        font-size: 16px;
+    }
+    .start-button:hover{
+        background-color: green;
+    }
+
+    .hero-section-reverse {
+        flex-direction: row;
+    }
+    .hero-section-reverse .hero-content {
+        padding-right: 0;
+        padding-left: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    .feature {
+        border-right: 1px solid #e0e0e0;
+    }
+
+    .feature:nth-child(3n) {
+        border-right: none;
+    }
+
+    .feature:nth-last-child(-n+3) {
+        border-bottom: none;
+    }
+}
+
+@media (min-width: 600px) and (max-width: 850px) {
+    .social-icons {
+        display: none;
+    }
+
+    .hero-section {
+        max-width: 850px;
+        display: flex;
+        align-items: flex-start;
+        flex-direction: row-reverse;
+    }
+
+    .hero-content {
+        flex: 1;
+        padding-right: 20px;
+    }
+
+    .hero-image {
+        flex: 1;
+        max-width: 50%;
+        margin-bottom: 0;
+    }
+
+    .hero-section:nth-child(3) .hero-content {
+        padding-right: 0;
+        padding-left: 20px;
+    }
+
+    .hero-section-reverse {
+        flex-direction: row;
+    }
+
+    .hero-section-reverse .hero-content {
+        padding-right: 0;
+        padding-left: 20px;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    .feature {
+        border-right: 1px solid #e0e0e0;
+    }
+    .feature:nth-child(2n) {
+        border-right: none;
+    }
+    .feature:nth-last-child(-n+2) {
+        border-bottom: none;
+    }
+}
+
+@media (max-width: 600px) {
+    nav {
+        display: none;
+        position: absolute;
+        top: 50px;
+        left: 0;
+        width: 100%;
+        background-color: #f8f8f8;
+    }
+
+    nav.active {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        padding: 10px 0;
+    }
+
+    nav ul li {
+        margin: 10px 20px;
+    }
+
+    .hamburger {
+        display: block;
+    }
+
+    .social-icons {
+        display: none;
+    }
+
+    .gallery-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .features-grid {
+        grid-template-columns: 1fr;
+    }
+    .feature:last-child {
+        border-bottom: none;
+    }
+    section {
+            background: #fff;
+            padding: 30px;
+            border-radius: 5px;
+            box-shadow: 0px 0px 10px 0px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            max-width: 500px;
+            text-align: center;
+        }
+        input, select, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+        }
+        input[type="checkbox"] {
+            width: auto;
+            margin: 0 10px 0 0;
+        }
+        input[type="radio"] {
+            width: auto;
+            margin: 0 10px 0 0;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+            text-align: left;
+        }
+        button {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #555;
+        }
+        .social-icons {
+            margin-top: 20px;
+        }
+        .social-icons img {
+            width: 30px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+    
+}
+</style>
+<body>
+<header>
+    <div class="header-content">
+        <div class="logo">Camping</div>
+        <nav>
+            <ul>
+                <li><a href="#">Stories</a></li>
+                <li><a href="#gallery">Gallery</a></li>
+                <li><a href="#features">Features</a></li>
+                <li><a href="#write">Write to us</a></li>
+            </ul>
+        </nav>
+    </div>
+    <div class="social-icons">
+        <a href="https://www.twitter.com" title="Twitter"><img src="twitter-svgrepo-com.svg"class="feature-icon"></a>
+        <a href="https://www.facebook.com" title="Facebook"><img src="facebook-svgrepo-com.svg"class="feature-icon"></a>
+        <a href="https://www.instagram.com" title="Instagram"><img src="instagram-svgrepo-com.svg"class="feature-icon"></a>
+        <a href="https://www.youtube.com" title="YouTube"><img src="youtube-svgrepo-com.svg"class="feature-icon"></a>
+        <a href="https://www.gmail.com" title="Email"><img src="mail-pencil-svgrepo-com.svg"class="feature-icon"></a>
+    </div>
+    <div class="hamburger">☰</div>
+</header>
+
+<main>
+    <section class="hero-section">
+        <img src="picA.jpg" class="hero-image">
+        <div class="hero-content">
+            <h1>Let's hit the road</h1>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy</p>
+            <p></p>
+            <a href="#" class="start-button">START</a>
+        </div>
+    </section>
+
+    <section class="hero-section hero-section-reverse">
+        <img src="picB.jpg" class="hero-image">
+        <div class="hero-content">
+            <h1>Story</h1>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy</p>
+            
+            <a href="#" class="start-button">MORE</a>
+        </div>
+    </section>
+
+    <section class="hero-section">
+        <img src="picC.jpg"class="hero-image">
+        <div class="hero-content">
+            <h1>Story</h1>
+            <p>It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout. The point of using Lorem Ipsum is that it has a more-or-less normal distribution of letters, as opposed to using 'Content here, content here', making it look like readable English. Many desktop publishing packages and web page editors now use Lorem Ipsum as their default model text, and a search for 'lorem ipsum' will uncover many web sites still in their infancy</p>
+            <a href="#" class="start-button">MORE</a>
+        </div>
+    </section>
+    
+    <section class="gallery-section" id="gallery">
+        <h2 class="section-title">Gallery</h2>
+        <div class="gallery-grid">
+            <img src="natural.jpg" class="gallery-image">
+            <img src="natureal2.jpg"class="gallery-image">
+            <img src="natureal3.jpg" class="gallery-image">
+        </div>
+    </section>
+
+    <section class="features-section" id="features">
+        <h2>Features</h2>
+        <div class="features-grid">
+            <div class="feature">
+                <img src="plane-2-svgrepo-com.svg" alt="Plane icon" class="feature-icon">
+                <div class="feature-title">One</div>
+                <div class="feature-description">There are many variations of passages of Lorem Ipsum available</div>
+            </div>
+            <div class="feature">
+                <img src="map-location-pin-svgrepo-com.svg" alt="Map icon" class="feature-icon">
+                <div class="feature-title">Two</div>
+                <div class="feature-description">There are many variations of passages of Lorem Ipsum available</div>
+            </div>
+            <div class="feature">
+                <img src="film-svgrepo-com.svg" alt="Film icon" class="feature-icon">
+                <div class="feature-title">Three</div>
+                <div class="feature-description">There are many variations of passages of Lorem Ipsum available</div>
+            </div>
+            <div class="feature">
+                <img src="clock-two-svgrepo-com.svg" alt="Alarm icon" class="feature-icon">
+                <div class="feature-title">Four</div>
+                <div class="feature-description">There are many variations of passages of Lorem Ipsum available</div>
+            </div>
+            <div class="feature">
+                <img src="face-scan-svgrepo-com.svg" alt="Panda icon" class="feature-icon">
+                <div class="feature-title">Five</div>
+                <div class="feature-description">There are many variations of passages of Lorem Ipsum available</div>
+            </div>
+            <div class="feature">
+                <img src="react-svgrepo-com.svg" alt="Gear icon" class="feature-icon">
+                <div class="feature-title">Six</div>
+                <div class="feature-description">There are many variations of passages of Lorem Ipsum available</div>
+            </div>
+        </div>
+        <section class="contact-section" id=write>
+            <h2>Write to us</h2>
+            <form action="#" method="post">
+                <label for="name">Name:</label>
+                <input type="text" id="name" name="name" required>
+    
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" required>
+    
+                <label for="phone">Phone:</label>
+                <input type="tel" id="phone" name="phone">
+    
+                <label>Contact me via:</label>
+                <label><input type="radio" name="contact_via" value="email" required> Email</label>
+                <label><input type="radio" name="contact_via" value="phone"> Phone</label>
+                <label><input type="radio" name="contact_via" value="telegram"> Telegram</label>
+    
+                <label for="topic">Topic:</label>
+                <select id="topic" name="topic" required>
+                    <option value="post_story">Choose ypur option</option>
+                    <option value="general_inquiry">Option A</option>
+                    <option value="support">Option B</option>
+                </select>
+    
+                <label for="message">Message:</label>
+                <textarea id="message" name="message" rows="5" required></textarea>
+    
+                <label><input type="checkbox" name="human" required> I am a human</label>
+    
+                <button type="submit">SEND</button>
+            </form>
+        </section>
+    
+        <section class="social-icons-section">
+            <div class="social-icons">
+                <a href="https://www.twitter.com" title="Twitter"><img src="twitter-svgrepo-com.svg" class="feature-icon" alt="Twitter"></a>
+                <a href="https://www.facebook.com" title="Facebook"><img src="facebook-svgrepo-com.svg" class="feature-icon" alt="Facebook"></a>
+                <a href="https://www.instagram.com" title="Instagram"><img src="instagram-svgrepo-com.svg" class="feature-icon" alt="Instagram"></a>
+                <a href="https://www.youtube.com" title="YouTube"><img src="youtube-svgrepo-com.svg" class="feature-icon" alt="YouTube"></a>
+                <a href="https://www.email.com" title="Email"><img src="mail-pencil-svgrepo-com.svg" class="feature-icon" alt="Email"></a>
+            </div>
+        </section>
+    </main>
+    
+    <footer>
+        <p>&copy; Satya</p>
+    </footer>
+    </body>
+    </html>
+    </section>
+</main>
+
+</body>
+</html>
